@@ -91,6 +91,8 @@
     
 
 <div class="container animate__animated animate__fadeIn">
+
+  <p>Watched Ads: <span id="watchedAds">0</span></p>
  
     <h2>Watch Ads and Earn Rewards!</h2>
     <div>
@@ -126,13 +128,12 @@
 
 <script>
     // কাউন্টার সংরক্ষণ করতে আলাদা ভ্যারিয়েবল
-    let adButton1Count = 0;
-    let adButton2Count = 0;
-    let adButton3Count = 0;
-    let adButton4Count = 0;
+    let watchedAds = 0;
 
     function showAd(buttonId) {
         show_8595405().then(() => {
+          watchedAds++;
+          updateDisplay();
             // Reward function
             if (buttonId === 'Show Ad 1') {
                 adButton1Count++;
@@ -151,6 +152,11 @@
             toastr.error('There was an error displaying the ad.', 'Error');
             console.error(error);
         });
+    }
+
+    function updateDisplay() {
+      document.getElementById('watchedAds').innerText = watchedAds;
+
     }
 
     // ইভেন্ট হ্যান্ডলার যোগ করুন
