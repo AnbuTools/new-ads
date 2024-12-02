@@ -88,8 +88,9 @@
 </head>
 <body>
 
-<div class="container animate__animated animate__fadeIn">
     
+
+<div class="container animate__animated animate__fadeIn">
  
     <h2>Watch Ads and Earn Rewards!</h2>
     <div>
@@ -102,21 +103,6 @@
         <button id="showAdButton4" class="btn btn-red">Show Ad 4</button>
         <p id="count4">Clicks: 0</p>
     </div>
-
-let counters = { 1: 0, 2: 0, 3: 0, 4: 0 };
-
-    function showAd(buttonId) {
-        const buttonNumber = buttonId.replace('showAdButton', '');
-        counters[buttonNumber]++;
-        
-        // Update the counter display
-        document.getElementById(`count${buttonNumber}`).innerText = `Clicks: ${counters[buttonNumber]}`;
-
-        // Simulate ad reward
-        toastr.success(`You clicked on ${buttonId} and watched the ad! Total clicks: ${counters[buttonNumber]}`, 'Congratulations');
-    }
-
-  
     <!-- DAILY 5 DOLLAR EARNING  -->
     <script type="text/javascript">
 	atOptions = {
@@ -148,6 +134,21 @@ let counters = { 1: 0, 2: 0, 3: 0, 4: 0 };
             console.error(error);
         });
     }
+
+
+    let counters = { 1: 0, 2: 0, 3: 0, 4: 0 };
+
+    function showAd(buttonId) {
+    const buttonNumber = buttonId.replace('showAdButton', '');
+    counters[buttonNumber]++;
+    
+    // Update the counter display
+    document.getElementById(`count${buttonNumber}`).innerText = `Clicks: ${counters[buttonNumber]}`;
+
+    // Simulate ad reward
+    toastr.success(`You clicked on ${buttonId} and watched the ad! Total clicks: ${counters[buttonNumber]}`, 'Congratulations');
+}
+
 
     document.getElementById('showAdButton1').addEventListener('click', function() {
         showAd('Show Ad 1');
