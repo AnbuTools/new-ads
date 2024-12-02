@@ -1,12 +1,27 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONETAG SELF CLICK BY BX</title>
+    <title>MONETAG  SELF CLICK BY BX..</title>
+      <!-- কীরে  MOTHER F**** 
+     তোর আব্বুর কোড চুরি করতে আইসোস নাকির এ 
+     মাদারচোদ -->
+   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    
+    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8595405' data-sdk='show_8595405'></script> <!-- POWER BY MR PERFECT -->
+
     <style>
         body {
             display: flex;
@@ -37,11 +52,46 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            border: none;
+        }
+        .btn-red {
+            background-color: #F44336;
+            color: #ffffff;
+            border: none;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
 
+    
+
 <div class="container animate__animated animate__fadeIn">
+ 
     <h2>Watch Ads and Earn Rewards!</h2>
     <div>
         <button id="showAdButton1" class="btn btn-primary">Show Ad 1</button>
@@ -53,55 +103,118 @@
         <button id="showAdButton4" class="btn btn-red">Show Ad 4</button>
         <p id="count4">Clicks: 0</p>
     </div>
+    <!-- DAILY 5 DOLLAR EARNING  -->
+    <script type="text/javascript">
+	atOptions = {
+		'key' : 'b6a638c04543878bcc4514278c855cf7',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+
+    // BATCH 01 ENTRY FREE 1 DOLLAR OR 100 BDT 
+</script>
+
 </div>
 
+<!-- Bootstrap JS and dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Toastr JS CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 <script>
-    // Button click counters
-    let counters = { 1: 0, 2: 0, 3: 0, 4: 0 };
+  // কাউন্টার সংরক্ষণ করতে আলাদা ভ্যারিয়েবল
+  let adButton1Count = 0;
+  let adButton2Count = 0;
+  let adButton3Count = 0;
+  let adButton4Count = 0;
 
-    function showAd(buttonId) {
-        const buttonNumber = buttonId.replace('showAdButton', '');
-        counters[buttonNumber]++;
-        
-        // Update the counter display
-        document.getElementById(`count${buttonNumber}`).innerText = `Clicks: ${counters[buttonNumber]}`;
+  function showAd(buttonId, countVar) {
+      show_8595405().then(() => {
+          // Reward function
+          countVar++; // ক্লিক কাউন্টার বাড়ান
+          toastr.success(`You have watched the ad on ${buttonId} and earned a reward! Total clicks: ${countVar}`, 'Congratulations');
+      }).catch((error) => {
+          toastr.error('There was an error displaying the ad.', 'Error');
+          console.error(error);
+      });
 
-        // Simulate ad reward
-        toastr.success(`You clicked on ${buttonId} and watched the ad! Total clicks: ${counters[buttonNumber]}`, 'Congratulations');
-    }
+      // Return the updated count for display
+      return countVar;
+  }
 
-    // Add event listeners to buttons
-    document.getElementById('showAdButton1').addEventListener('click', function() {
-        showAd('showAdButton1');
-    });
-    document.getElementById('showAdButton2').addEventListener('click', function() {
-        showAd('showAdButton2');
-    });
-    document.getElementById('showAdButton3').addEventListener('click', function() {
-        showAd('showAdButton3');
-    });
-    document.getElementById('showAdButton4').addEventListener('click', function() {
-        showAd('showAdButton4');
-    });
+  document.getElementById('showAdButton1').addEventListener('click', function() {
+      adButton1Count = showAd('Show Ad 1', adButton1Count);
+  });
 
-    // Prevent right-click and block certain key combinations
-    document.addEventListener("contextmenu", function(e) {
-        e.preventDefault();
-        alert("Unauthorized action detected!");
-        window.location.href = "https://t.me/Team_bx1";
-    });
+  document.getElementById('showAdButton2').addEventListener('click', function() {
+      adButton2Count = showAd('Show Ad 2', adButton2Count);
+  });
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "F12" || 
-            (e.ctrlKey && ["I", "J", "C", "U", "K", "S", "A", "X", "P"].includes(e.key)) || 
-            (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key))) {
+  document.getElementById('showAdButton3').addEventListener('click', function() {
+      adButton3Count = showAd('Show Ad 3', adButton3Count);
+  });
+
+  document.getElementById('showAdButton4').addEventListener('click', function() {
+      adButton4Count = showAd('Show Ad 4', adButton4Count);
+  });
+
+    // CODE BY BX PERFECT 
+    // JOIN OUR TEAM @TEAM_BX1
+
+
+    
+        // Prevent right-click
+        document.addEventListener("contextmenu", function(e) {
             e.preventDefault();
-            alert("Unauthorized action detected!");
+            alert("কিরে তোর চোরের mother fu*** ");
             window.location.href = "https://t.me/Team_bx1";
-        }
+        });
+
+        // BX POWER
+        document.addEventListener("keydown", (e) => {
+            if (
+                e.key === "F12" || 
+                (e.ctrlKey && ["I", "J", "C", "U", "K", "S", "A", "X", "P"].includes(e.key)) || 
+                (e.shiftKey && e.key === "F10")
+                (e.ctrlKey && e.key === "S")
+                
+            ) {
+                e.preventDefault();
+                alert("কিরে তোর চোরের mother fu*** ");
+                 window.location.href = "https://t.me/Team_bx1";
+            }
+               // Block Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+        e.preventDefault();
+        alert("কিরে তোর চোরের mother fu*** ");
+         window.location.href = "https://t.me/Team_bx1";
+      }
+        });
+
+    document.addEventListener('keydown', function (e) {
+      // Check if the Ctrl key is pressed
+      if (e.ctrlKey) {
+        e.preventDefault();
+        alert("কিরে তোর চোরের mother fu*** ");
+        window.location.href = "https://t.me/Team_bx1";
+      }
     });
+    
+    document.addEventListener('keydown', function (e) {
+      // Check if the Shift key is pressed
+      if (e.shiftKey) {
+        e.preventDefault();
+        alert("কিরে তোর চোরের mother fu*** ");
+        window.location.href = "https://t.me/Team_bx1";
+      }
+    });
+     
+
+
 </script>
+
 </body>
 </html>
