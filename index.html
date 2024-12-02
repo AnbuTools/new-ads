@@ -125,41 +125,50 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <script>
-  // কাউন্টার সংরক্ষণ করতে আলাদা ভ্যারিয়েবল
-  let adButton1Count = 0;
-  let adButton2Count = 0;
-  let adButton3Count = 0;
-  let adButton4Count = 0;
+    // কাউন্টার সংরক্ষণ করতে আলাদা ভ্যারিয়েবল
+    let adButton1Count = 0;
+    let adButton2Count = 0;
+    let adButton3Count = 0;
+    let adButton4Count = 0;
 
-  function showAd(buttonId, countVar) {
-      show_8595405().then(() => {
-          // Reward function
-          countVar++; // ক্লিক কাউন্টার বাড়ান
-          toastr.success(`You have watched the ad on ${buttonId} and earned a reward! Total clicks: ${countVar}`, 'Congratulations');
-      }).catch((error) => {
-          toastr.error('There was an error displaying the ad.', 'Error');
-          console.error(error);
-      });
+    function showAd(buttonId) {
+        show_8595405().then(() => {
+            // Reward function
+            if (buttonId === 'Show Ad 1') {
+                adButton1Count++;
+                toastr.success(`You have watched the ad on ${buttonId} and earned a reward! Total clicks: ${adButton1Count}`, 'Congratulations');
+            } else if (buttonId === 'Show Ad 2') {
+                adButton2Count++;
+                toastr.success(`You have watched the ad on ${buttonId} and earned a reward! Total clicks: ${adButton2Count}`, 'Congratulations');
+            } else if (buttonId === 'Show Ad 3') {
+                adButton3Count++;
+                toastr.success(`You have watched the ad on ${buttonId} and earned a reward! Total clicks: ${adButton3Count}`, 'Congratulations');
+            } else if (buttonId === 'Show Ad 4') {
+                adButton4Count++;
+                toastr.success(`You have watched the ad on ${buttonId} and earned a reward! Total clicks: ${adButton4Count}`, 'Congratulations');
+            }
+        }).catch((error) => {
+            toastr.error('There was an error displaying the ad.', 'Error');
+            console.error(error);
+        });
+    }
 
-      // Return the updated count for display
-      return countVar;
-  }
+    // ইভেন্ট হ্যান্ডলার যোগ করুন
+    document.getElementById('showAdButton1').addEventListener('click', function () {
+        showAd('Show Ad 1');
+    });
 
-  document.getElementById('showAdButton1').addEventListener('click', function() {
-      adButton1Count = showAd('Show Ad 1', adButton1Count);
-  });
+    document.getElementById('showAdButton2').addEventListener('click', function () {
+        showAd('Show Ad 2');
+    });
 
-  document.getElementById('showAdButton2').addEventListener('click', function() {
-      adButton2Count = showAd('Show Ad 2', adButton2Count);
-  });
+    document.getElementById('showAdButton3').addEventListener('click', function () {
+        showAd('Show Ad 3');
+    });
 
-  document.getElementById('showAdButton3').addEventListener('click', function() {
-      adButton3Count = showAd('Show Ad 3', adButton3Count);
-  });
-
-  document.getElementById('showAdButton4').addEventListener('click', function() {
-      adButton4Count = showAd('Show Ad 4', adButton4Count);
-  });
+    document.getElementById('showAdButton4').addEventListener('click', function () {
+        showAd('Show Ad 4');
+    });
 
     // CODE BY BX PERFECT 
     // JOIN OUR TEAM @TEAM_BX1
